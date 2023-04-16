@@ -18,7 +18,8 @@ createApp({
           done: false
         }
       ],
-      taskDoneStyle: 'text-bg-danger'
+      taskDoneStyle: 'text-decoration-line-through',
+      errorMsg: ''
     }
   },
   methods:{
@@ -30,6 +31,16 @@ createApp({
       else {
         this.tasks[index].done = !this.tasks[index].done;
         console.log(this.tasks[index].text, 'falso');
+      }
+    },
+    addTask(){
+      if (this.newTask != '') {
+        const newObjTask = {
+          text: this.newTask,
+          done: false
+        }
+        this.newTask = '';
+        this.tasks.push(newObjTask);
       }
     }
   },
