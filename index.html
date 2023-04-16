@@ -27,7 +27,7 @@
     <ul class="list-unstyled my-4">
       <li role="button" class="d-flex w-50 justify-content-between align-items-center m-auto user-select-none" v-for="(task, i) in tasks" @click="toggleDone(i)">
         <span :class="[task.done ? taskDoneStyle : '']">{{i+1}} - {{task.text}}</span>
-        <button class="btn rounded-3 text-secondary"><i class="fa-solid fa-trash"></i></button>
+        <button @click.stop="removeTask(i)" class="btn rounded-3 text-secondary"><i class="fa-solid fa-trash"></i></button>
       </li>
     </ul>
   </main>

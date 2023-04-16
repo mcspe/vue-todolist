@@ -42,6 +42,16 @@ createApp({
         this.newTask = '';
         this.tasks.push(newObjTask);
       }
+    },
+    removeTask(index){
+      if (this.tasks[index].done) {
+        this.tasks.splice(index, 1);
+      } else {
+        this.errorMsg = 'Per rimuovere un task è necessario averlo completato prima';
+        setTimeout(() => {
+          this.errorMsg = '';
+        }, 3000);
+      }
     }
   },
   mounted(){
