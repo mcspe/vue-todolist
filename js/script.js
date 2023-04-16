@@ -3,6 +3,7 @@ const {createApp} = Vue;
 createApp({
   data(){
     return {
+      noTaskMsg: 'Non hai nulla in programma <i class="fa-regular fa-face-grin-wink"></i>',
       newTask: '',
       tasks: [
         {
